@@ -47,8 +47,8 @@ After successful compilation, deploy the contract by clicking on the "Deploy & R
 Now, you can provide your age, the amount of tokens you want, and two integers for the division operation. Proceed to call each function `RequireCheck()`, `RevertCheck()`, and `AssertCheck()` with the required inputs and press transact.
 
 ## Author
-Somanshu Sharma
-Email: somanshusharma888@gmail.com
+Simran Sinha
+Email: 21BCS3832@cuchd.in
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
