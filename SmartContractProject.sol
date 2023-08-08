@@ -5,16 +5,16 @@ contract ErrorHandling {
     uint public coinbalance = 0;
     uint public quotient = 0;
 
-    function RequireCheck(uint score, uint coins) public payable {
+    function RequireCheck(uint income, uint coins) public payable {
         coinbalance += coins;
-        require(score >= 100, "Score is less than 100. Transaction not possible");
+        require(income >= 100, "income is less than 50000. Transaction not possible");
     }
 
     error ThrowError(string);
-    function RevertCheck(uint score, uint coins) public payable {
+    function RevertCheck(uint income, uint coins) public payable {
         coinbalance += coins;
-        if (score < 100)
-            revert ThrowError("Score is less than 100. Transaction not possible");
+        if (income < 50000)
+            revert ThrowError("income is less than 50000. Transaction not possible");
     }
 
     function AssertCheck(uint a, uint b) public {
