@@ -4,7 +4,7 @@
 This solidity program demonstrates the usage of three important error handling functions: `require()`, `revert()`, and `assert()` within a smart contract. The contract aims to handle age verification for a user before processing a transaction. Additionally, it includes handling the divide by zero error.
 
 ## Description
-The contract contains three main functions to handle various error scenarios. First, the `RequireCheck()` function verifies the user's age and performs the requested transaction to their account if they are 18 years or older. Second, the `RevertCheck()` function accomplishes the same task using the `revert()` function to handle errors when the user's age is less than 18. Finally, the `AssertCheck()` function ensures that a division by zero error is avoided by using the `assert()` function.
+The contract contains three main functions to handle various error scenarios. First, the `RequireCheck()` function verifies the user's age and performs the requested transaction to their account if they have income grater than 50000. Second, the `RevertCheck()` function accomplishes the same task using the `revert()` function to handle errors when the user's income less than 50000. Finally, the `AssertCheck()` function ensures that a division by zero error is avoided by using the `assert()` function.
 
 ## Getting Started
 
@@ -21,16 +21,16 @@ contract ErrorHandling {
     uint public coinbalance = 0;
     uint public quotient = 0;
 
-    function RequireCheck(uint score, uint coins) public payable {
+    function RequireCheck(uint income, uint coins) public payable {
         coinbalance += coins;
-        require(score >= 100, "Score is less than 100. Transaction not possible");
+        require(income >= 50000, "income is less than 50000. Transaction not possible");
     }
 
     error ThrowError(string);
-    function RevertCheck(uint score, uint coins) public payable {
+    function RevertCheck(uint income, uint coins) public payable {
         coinbalance += coins;
-        if (score < 100)
-            revert ThrowError("Score is less than 100. Transaction not possible");
+        if (income < 50000)
+            revert ThrowError("income is less than 100. Transaction not possible");
     }
 
     function AssertCheck(uint a, uint b) public {
@@ -44,7 +44,7 @@ To compile the code, navigate to the "Solidity Compiler" tab in the left-hand si
 
 After successful compilation, deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the contract from the dropdown menu, and then click on the "Deploy" button.
 
-Now, you can provide your age, the amount of tokens you want, and two integers for the division operation. Proceed to call each function `RequireCheck()`, `RevertCheck()`, and `AssertCheck()` with the required inputs and press transact.
+Now, you can provide your income, the amount of tokens you want, and two integers for the division operation. Proceed to call each function `RequireCheck()`, `RevertCheck()`, and `AssertCheck()` with the required inputs and press transact.
 
 ## Author
 Simran Sinha
